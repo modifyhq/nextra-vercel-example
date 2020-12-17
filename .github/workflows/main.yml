@@ -1,0 +1,43 @@
+name: Update pages from Modify
+on:
+  workflow_dispatch:
+    inputs:
+      refresh_token:
+        description: Modify refresh token
+        required: true
+      job_instance_id:
+        description: ID of Job Instance to notify
+        required: false
+      team_slug:
+        description: Team slug
+        required: true
+      workspace_slug:
+        description: Workspace slug
+        required: true
+      workspace_branch_slug:
+        description: Workspace branch slug
+        required: true
+        default: master
+      connector_slug:
+        description: Connector slug
+        required: true
+        default: pages
+      connector_path:
+        description: Connector path
+        required: true
+        default: /
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update pages
+        run: ./update_pages.sh
+        env:
+          REFRESH_TOKEN: ${{ github.event.inputs.refresh_token}}
+          JOB_INSTANCE_ID: ${{ github.event.inputs.job_instance_id}}
+          TEAM_SLUG: ${{ github.event.inputs.team_slug}}
+          WORKSPACE_SLUG: ${{ github.event.inputs.workspace_slug}}
+          WORKSPACE_BRANCH_SLUG: ${{ github.event.inputs.workspace_branch_slug}}
+          CONNECTOR_SLUG: ${{ github.event.inputs.connector_slug}}
+          CONNECTOR_PATH: ${{ github.event.inputs.connector_path}}
