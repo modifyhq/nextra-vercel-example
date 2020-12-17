@@ -1,7 +1,7 @@
 // theme.config.js
 export default {
-  repository: 'https://github.com/shuding/nextra', // project repo
-  docsRepository: 'https://github.com/shuding/nextra', // docs repo
+  repository: 'https://github.com/modifyhq/nextra-vercel-example', // project repo
+  docsRepository: 'https://github.com/modifyhq/nextra-vercel-example', // docs repo
   branch: 'master', // branch of docs
   path: '/', // path of docs
   titleSuffix: ' – Nextra',
