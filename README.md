@@ -1,4 +1,4 @@
-# Nextra Versel Example
+# Nextra Vercel Example
 
 This example repository shows how to publish Modify managed content to a Nextra based static site
 using Github Actions and Vercel.
