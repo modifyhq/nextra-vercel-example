@@ -97,15 +97,12 @@ Definition payload in [Step 4](#step-4---create-modify-job) to suit.
 
 In Modify, select the correct team and workspace and go to the Jobs section.
 
-Click the `Create Job` button and then select the `Github Action` template:
+Click the `Create Job` button and then select the `Example: Publish Nextra to Vercel` template:
 
 You will need to complete the following fields:
 
-- Name: `Nextra Vercel Example`
 - Github Owner: `my-org`
 - Github Repository: `nextra-vercel-example`
-- Git Reference: `master`
-- Workflow ID: `main.yml`
 
 Next click `+` next to Credentials and enter the following:
 - Name: `Nextra Vercel Example`
