@@ -1,12 +1,13 @@
 # Nextra Vercel Example
 
-This example repository shows how to publish Modify managed content to a Nextra based static site
-using Github Actions and Vercel.
+This example repository shows how to publish Modify managed content to a Next.js based static site
+with the Nextra theme using GitHub Actions and Vercel.
 
 ## Nextra
 
-Nextra is a Next.js based static site generator. The root of this repository contains a simple setup
-using the docs theme, and is intended to be built and deployed to Vercel.
+[Nextra](https://github.com/shuding/nextra) is a Next.js based static site generator. The root of 
+this repository contains a simple setup using the docs theme, and is intended to be built and 
+deployed to Vercel.
 
 To test it locally you need NodeJS. We recommend using `nvm` for Node, setup instructions are
 available at https://github.com/nvm-sh/nvm. 
@@ -25,16 +26,16 @@ Site should be accessible on http://localhost:3000/
 
 ## `update_pages.sh`
 
-This script is designed to be run by Github Actions and will
+This script is designed to be run by GitHub Actions and will
 - Download markdown content from a Modify connector
 - Empty `pages` and unpack the downloaded content to replace it
-- Commit and push changes to Github
+- Commit and push changes to GitHub
 - Notify Modify it has completed (if provided with a JOB_INSTANCE_ID)
 
 ## Github Actions
 
-There is a Github Actions workflow defined in `.github/workflows/main.yml` which will be run by
-Modify Jobs. It can also be run manually from Github Actions UI provided the required `inputs` are
+There is a GitHub Actions workflow defined in `.github/workflows/main.yml` which will be run by
+Modify Jobs. It can also be run manually from GitHub Actions UI provided the required `inputs` are
 passed:
 
 - `refresh_token`: Modify refresh token
@@ -48,7 +49,7 @@ passed:
 
 Vercel will be used to build and host the static site: https://vercel.com/
 
-## Step 1 - Github configuration
+## Step 1 - GitHub configuration
 
 The publication cycle of this setup requires changes to be committed and pushed to Github in order
 for Vercel to use them, so you need to fork the repository e.g. `my-org/nextra-vercel-example`.
@@ -56,7 +57,7 @@ for Vercel to use them, so you need to fork the repository e.g. `my-org/nextra-v
 Once forked, the workflow will be disabled by default. To enable it, go to `Actions` in the Github
 console and click the `I understand my workflows, go ahead and enable them` button.
 
-Finally, you will need to generate a Github Personal Access Token to allow Modify to trigger the
+Finally, you will need to generate a GitHub Personal Access Token to allow Modify to trigger the
 workflow. You can do this at https://github.com/settings/tokens. It requires full control of private
 repositories as changes need to be committed in order to update posts.
 
@@ -119,7 +120,7 @@ Click the name of the new Job Definition to display the details.
 ## Step 5 - Run the Modify Job
 
 Click `Start` to run the Job and a new Job Instance will be created. This will `POST` the payload to
-the Github API gateway along with configured credentials, `REFRESH_TOKEN` and `JOB_INSTANCE_ID`.
+the GitHub API gateway along with configured credentials, `REFRESH_TOKEN` and `JOB_INSTANCE_ID`.
 Modify expects the remote system to notify when the job is complete using these details.
 
 When this is complete you should see the Job Instance in Modify change from `Started` to `Finished`.
